@@ -78,7 +78,7 @@ const numSpans = document.querySelectorAll('.section-number-bar span');
 
 function updateSectionNumbers() {
   const scrollY = window.scrollY + 180;
-  const sectionList = ['profil', 'pendidikan', 'artefak', 'lampiran', 'misi'];
+  const sectionList = ['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'filosofi', 'misi'];
   sectionList.forEach((id, idx) => {
     const el = document.getElementById(id);
     if (!el) return;
