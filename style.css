@@ -2420,3 +2420,223 @@ KOMPONEN 4: LAMPIRAN
   .refleksi-card-header { padding: 1.25rem 1.5rem; }
   .refleksi-card-body { padding: 1.25rem 1.5rem; }
 }
+/* =============================================
+   MATA KULIAH 1 — REFLEKSI MATA KULIAH
+   ============================================= */
+.matakuliah-section {
+  background: var(--blue-50);
+}
+
+.mk-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.mk-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.mk-card:hover {
+  border-color: var(--blue-200);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.mk-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.75rem;
+  background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
+}
+
+.mk-icon {
+  font-size: 1.8rem;
+}
+
+.mk-num {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+}
+
+.mk-card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+}
+
+.mk-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--blue-900);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.mk-desc-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  flex: 1;
+}
+
+.mk-desc {
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.mk-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  background: linear-gradient(135deg, var(--blue-500), var(--blue-700));
+  color: var(--white);
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(33,113,199,0.35);
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+.mk-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(33,113,199,0.5);
+  color: var(--white);
+}
+
+/* =============================================
+   ARTEFAK 2 — ANALISIS PPL MANDIRI
+   ============================================= */
+.artefak2-section {
+  background: var(--white);
+}
+
+.artefak2-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.artefak2-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.artefak2-card:hover {
+  border-color: var(--blue-200);
+  box-shadow: var(--shadow-md);
+}
+
+.artefak2-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.artefak2-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.15);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 48px;
+}
+
+.artefak2-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.artefak2-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--white);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.artefak2-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+
+.artefak2-aspek {
+  padding: 1.75rem;
+  border-right: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.artefak2-aspek:last-child {
+  border-right: none;
+}
+
+.artefak2-aspek h4 {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  color: var(--blue-800);
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--blue-100);
+  margin-bottom: 0.25rem;
+}
+
+.artefak2-aspek p {
+  font-size: 0.83rem;
+  color: var(--gray-600);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* =============================================
+   LAMPIRAN 2
+   ============================================= */
+.lampiran2-section {
+  background: var(--gray-100);
+}
+
+/* =============================================
+   RESPONSIVE — Halaman Baru
+   ============================================= */
+@media (max-width: 1024px) {
+  .mk-grid { grid-template-columns: 1fr; }
+  .artefak2-body { grid-template-columns: 1fr; }
+  .artefak2-aspek { border-right: none; border-bottom: 1px solid var(--gray-200); }
+  .artefak2-aspek:last-child { border-bottom: none; }
+}
+
+@media (max-width: 768px) {
+  .mk-grid { grid-template-columns: 1fr; }
+  .artefak2-header { padding: 1.25rem 1.5rem; gap: 1rem; }
+  .artefak2-aspek { padding: 1.25rem 1.5rem; }
+}

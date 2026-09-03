@@ -28,13 +28,13 @@ navToggle.addEventListener('click', () => {
   const spans = navToggle.querySelectorAll('span');
   navToggle.classList.toggle('is-open');
   if (navToggle.classList.contains('is-open')) {
-    spans[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
-    spans[1].style.opacity   = '0';
-    spans[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.transform = 'rotate(45deg) translate(4px, 4px)';
+    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.opacity   = '0';
+    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.transform = 'rotate(-45deg) translate(4px, -4px)';
   } else {
-    spans[0].style.transform = '';
-    spans[1].style.opacity   = '';
-    spans[2].style.transform = '';
+    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.transform = '';
+    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.opacity   = '';
+    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.transform = '';
   }
 });
 
@@ -78,7 +78,7 @@ const numSpans = document.querySelectorAll('.section-number-bar span');
 
 function updateSectionNumbers() {
   const scrollY = window.scrollY + 180;
-  const sectionList = ['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'filosofi', 'misi'];
+  const sectionList = ['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'filosofi', 'misi'];
   sectionList.forEach((id, idx) => {
     const el = document.getElementById(id);
     if (!el) return;
@@ -86,17 +86,17 @@ function updateSectionNumbers() {
     const height = el.offsetHeight;
     if (scrollY >= top && scrollY < top + height) {
       numSpans.forEach(s => s.classList.remove('active-num'));
-      if (numSpans[idx]) numSpans[idx].classList.add('active-num');
+      if (numSpans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi']) numSpans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].classList.add('active-num');
     }
   });
 }
 
 // Klik section number bar → scroll ke section
 numSpans.forEach((span, idx) => {
-  const ids = ['profil', 'pendidikan', 'artefak', 'lampiran', 'misi'];
+  const ids = ['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'filosofi', 'misi'];
   span.style.cursor = 'pointer';
   span.addEventListener('click', () => {
-    const target = document.getElementById(ids[idx]);
+    const target = document.getElementById(ids['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi']);
     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
