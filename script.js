@@ -6,48 +6,44 @@
 'use strict';
 
 // =============================================
-// 1. NAVBAR — Scroll & Toggle
+// 1. SIDEBAR — Open, Close, Overlay
 // =============================================
-const navbar  = document.getElementById('navbar');
-const navToggle = document.getElementById('navToggle');
-const navLinks  = document.querySelector('.nav-links');
+const sidebar = document.getElementById('sidebar');
+const sidebarToggle = document.getElementById('sidebarToggle');
+const sidebarClose = document.getElementById('sidebarClose');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 60) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
-  updateActiveNav();
-  updateSectionNumbers();
+function openSidebar() {
+  sidebar.classList.add('open');
+  sidebarOverlay.classList.add('active');
+  sidebarToggle.classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSidebar() {
+  sidebar.classList.remove('open');
+  sidebarOverlay.classList.remove('active');
+  sidebarToggle.classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+sidebarToggle.addEventListener('click', () => {
+  sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
 });
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  // Animasi hamburger → X
-  const spans = navToggle.querySelectorAll('span');
-  navToggle.classList.toggle('is-open');
-  if (navToggle.classList.contains('is-open')) {
-    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.transform = 'rotate(45deg) translate(4px, 4px)';
-    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.opacity   = '0';
-    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.transform = 'rotate(-45deg) translate(4px, -4px)';
-  } else {
-    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.transform = '';
-    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.opacity   = '';
-    spans['profil', 'pendidikan', 'artefak', 'lampiran', 'refleksi', 'matakuliah', 'artefak2', 'lampiran2', 'refleksi2', 'matakuliah2', 'misi', 'filosofi'].style.transform = '';
-  }
-});
+sidebarClose.addEventListener('click', closeSidebar);
+sidebarOverlay.addEventListener('click', closeSidebar);
 
-// Tutup nav mobile saat link diklik
-document.querySelectorAll('.nav-links a').forEach(link => {
+// Tutup sidebar saat link diklik
+document.querySelectorAll('.sidebar-link').forEach(link => {
   link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
-    navToggle.classList.remove('is-open');
-    navToggle.querySelectorAll('span').forEach(s => {
-      s.style.transform = '';
-      s.style.opacity   = '';
-    });
+    closeSidebar();
   });
+});
+
+// Tutup sidebar dengan tombol Escape
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeSidebar();
 });
 
 // =============================================
@@ -58,13 +54,13 @@ const sections = document.querySelectorAll('section[id]');
 function updateActiveNav() {
   const scrollY = window.scrollY + 120;
   sections.forEach(section => {
-    const top    = section.offsetTop;
+    const top = section.offsetTop;
     const height = section.offsetHeight;
-    const id     = section.getAttribute('id');
-    const link   = document.querySelector(`.nav-links a[href="#${id}"]`);
+    const id = section.getAttribute('id');
+    const link = document.querySelector(`.sidebar-link[href="#${id}"]`);
     if (link) {
       if (scrollY >= top && scrollY < top + height) {
-        document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+        document.querySelectorAll('.sidebar-link').forEach(l => l.classList.remove('active'));
         link.classList.add('active');
       }
     }
@@ -82,7 +78,7 @@ function updateSectionNumbers() {
   sectionList.forEach((id, idx) => {
     const el = document.getElementById(id);
     if (!el) return;
-    const top    = el.offsetTop;
+    const top = el.offsetTop;
     const height = el.offsetHeight;
     if (scrollY >= top && scrollY < top + height) {
       numSpans.forEach(s => s.classList.remove('active-num'));
@@ -129,7 +125,7 @@ revealElements.forEach(el => revealObserver.observe(el));
 // =============================================
 // 5. TAB ARTEFAK — Switching tabs
 // =============================================
-const tabBtns    = document.querySelectorAll('.tab-btn');
+const tabBtns = document.querySelectorAll('.tab-btn');
 const tabContents = document.querySelectorAll('.tab-content');
 
 tabBtns.forEach(btn => {
@@ -267,7 +263,7 @@ if (nilaiCircle) nilaiObserver.observe(nilaiCircle);
 // =============================================
 window.addEventListener('mousemove', (e) => {
   const orbs = document.querySelectorAll('.hero-orb');
-  const xRatio = (e.clientX / window.innerWidth  - 0.5) * 2;
+  const xRatio = (e.clientX / window.innerWidth - 0.5) * 2;
   const yRatio = (e.clientY / window.innerHeight - 0.5) * 2;
 
   orbs.forEach((orb, i) => {
@@ -315,9 +311,9 @@ progressBar.style.cssText = `
 document.body.prepend(progressBar);
 
 window.addEventListener('scroll', () => {
-  const scrollTop  = window.scrollY;
-  const docHeight  = document.documentElement.scrollHeight - window.innerHeight;
-  const pct        = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
   progressBar.style.width = pct + '%';
 });
 

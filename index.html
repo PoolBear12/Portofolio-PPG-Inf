@@ -16,29 +16,87 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-brand">
-      <span class="brand-icon">✦</span>
-      <span>PPG Calon Guru 2026</span>
+  <!-- Tombol buka sidebar -->
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Buka navigasi">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-brand">
+        <span class="brand-icon">✦</span>
+        <span>PPG Calon Guru 2026</span>
+      </div>
+      <button class="sidebar-close" id="sidebarClose">✕</button>
     </div>
-    <ul class="nav-links">
-      <li><a href="#profil">Profil</a></li>
-      <li><a href="#pendidikan">Pendidikan</a></li>
-      <li><a href="#artefak">Artefak 1</a></li>
-      <li><a href="#lampiran">Lampiran 1</a></li>
-      <li><a href="#refleksi">Refleksi 1</a></li>
-      <li><a href="#matakuliah">Mata Kuliah 1</a></li>
-      <li><a href="#artefak2">Artefak 2</a></li>
-      <li><a href="#lampiran2">Lampiran 2</a></li>
-      <li><a href="#refleksi2">Refleksi 2</a></li>
-      <li><a href="#matakuliah2">Mata Kuliah 2</a></li>
-      <li><a href="#filosofi">Filosofi</a></li>
-      <li><a href="#misi">Misi</a></li>
+
+    <div class="sidebar-section-label">Semester 1</div>
+    <ul class="sidebar-links">
+      <li><a href="#profil" class="sidebar-link">
+          <span class="sl-num">01</span>
+          <span class="sl-text">Profil Mahasiswa</span>
+        </a></li>
+      <li><a href="#pendidikan" class="sidebar-link">
+          <span class="sl-num">02</span>
+          <span class="sl-text">Pendidikan & Pengalaman</span>
+        </a></li>
+      <li><a href="#artefak" class="sidebar-link">
+          <span class="sl-num">03</span>
+          <span class="sl-text">Artefak 1</span>
+        </a></li>
+      <li><a href="#lampiran" class="sidebar-link">
+          <span class="sl-num">04</span>
+          <span class="sl-text">Lampiran 1</span>
+        </a></li>
+      <li><a href="#refleksi" class="sidebar-link">
+          <span class="sl-num">05</span>
+          <span class="sl-text">Refleksi 1</span>
+        </a></li>
+      <li><a href="#matakuliah" class="sidebar-link">
+          <span class="sl-num">06</span>
+          <span class="sl-text">Mata Kuliah 1</span>
+        </a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle">
-      <span></span><span></span><span></span>
-    </button>
+
+    <div class="sidebar-section-label">Semester 2</div>
+    <ul class="sidebar-links">
+      <li><a href="#artefak2" class="sidebar-link">
+          <span class="sl-num">07</span>
+          <span class="sl-text">Artefak 2</span>
+        </a></li>
+      <li><a href="#lampiran2" class="sidebar-link">
+          <span class="sl-num">08</span>
+          <span class="sl-text">Lampiran 2</span>
+        </a></li>
+      <li><a href="#refleksi2" class="sidebar-link">
+          <span class="sl-num">09</span>
+          <span class="sl-text">Refleksi 2</span>
+        </a></li>
+      <li><a href="#matakuliah2" class="sidebar-link">
+          <span class="sl-num">10</span>
+          <span class="sl-text">Mata Kuliah 2</span>
+        </a></li>
+    </ul>
+
+    <div class="sidebar-section-label">Penutup</div>
+    <ul class="sidebar-links">
+      <li><a href="#filosofi" class="sidebar-link">
+          <span class="sl-num">11</span>
+          <span class="sl-text">Filosofi Mengajar</span>
+        </a></li>
+      <li><a href="#misi" class="sidebar-link">
+          <span class="sl-num">12</span>
+          <span class="sl-text">Misi & Kompetensi</span>
+        </a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      PPG Calon Guru 2026
+    </div>
   </nav>
 
   <!-- Hero Section -->
