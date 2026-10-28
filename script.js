@@ -374,17 +374,6 @@ function showToast(message) {
 }
 
 // =============================================
-// 14. FOTO PLACEHOLDER — Klik untuk upload
-// =============================================
-document.querySelectorAll('.foto-placeholder').forEach(placeholder => {
-  placeholder.style.cursor = 'pointer';
-  placeholder.title = 'Klik untuk petunjuk menambahkan foto';
-  placeholder.addEventListener('click', () => {
-    showToast('📸 Ganti div .foto-placeholder dengan tag <img src="foto.jpg"> Anda');
-  });
-});
-
-// =============================================
 // 15. PROFIL PHOTO — Klik untuk petunjuk
 // =============================================
 const photoPh = document.querySelector('.profil-photo-placeholder');
